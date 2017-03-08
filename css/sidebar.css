@@ -3,7 +3,7 @@
     width: 15em;
     top: 3em;
     bottom: 3em;
-    left: -9em;
+    left: calc(-9em - 2.5px);
     z-index: 100;
     /*-webkit-transform: translate3d(-190px, 0, 0);*/
     transform: translate3d(0, 0, 0);
