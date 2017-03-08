@@ -1,0 +1,206 @@
+.menu {
+    position: fixed;
+    width: 300px;
+    top: 3em;
+    bottom: 3em;
+    left: 0;
+    z-index: 100;
+    /*-webkit-transform: translate3d(-190px, 0, 0);*/
+    transform: translate3d(-190px, 0, 0);
+    -webkit-transition: -webkit-transform 0.6s, -webkit-background-color 0.5s;
+    transition: transform 0.6s, background-color 0.5s;
+    background-color: transparent;
+}
+
+.menu.menu--open {
+    /*-webkit-transform: translate3d(0, 0, 0);*/
+    transform: translate3d(0, 0, 0);
+    background-color: rgba(255, 255, 255, .97);
+    -webkit-background-color: rgba(255, 255, 255, .97);
+}
+
+.menu--open .menu__inner:before {
+    /*background: linear-gradient(to top right, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 1) 20%, rgba(200, 200, 200, 1) 80%);*/
+    transition: background 2s;
+    filter: blur(5px);
+    content: '';
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*menu.menu--open:before {
+    width:100%;
+    height:100%;
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    filter:blur(10px);
+}*/
+
+.menu__inner {
+    width: calc(100% + 25px);
+    padding: 0 140px 2em 0;
+    overflow-y: auto;
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    background-color: transparent;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin: 0 0 2em 0;
+    /*-webkit-transform: translate3d(-150px, 0, 0);
+    transform: translate3d(-150px, 0, 0);*/
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+}
+
+.menu ul li:first-child {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    margin-top: 30px;
+}
+
+.menu ul li:nth-child(2) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+
+/*
+.menu ul li:nth-child(3) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+*/
+
+.menu ul li a {
+    display: block;
+    outline: none;
+    /*color: #B24E51;*/
+}
+
+.menu ul li .fa {
+    font-size: 2.5em;
+    display: block;
+    margin: 0 auto;
+    color: #5f656f;
+}
+
+.menu ul li span {
+    font-weight: bold;
+    font-size: 0.75em;
+    font-family: 'Arsenal', arial, sans-serif !important;
+    text-transform: uppercase;
+}
+
+.arrow {
+    height: 25px;
+    width: 25px;
+    border-left: 10px solid white;
+    border-bottom: 10px solid white;
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -135deg);
+    transition: transform 0.25s;
+    position: relative;
+    margin: 0 auto;
+    transition: transform 0.5s ease-in-out, border-color 0.5s linear;
+}
+
+.menu--open .arrow {
+    /*transform: rotate3d(0,0,1,45deg);*/
+    transform: scale3d(-1, 1, 1) rotate3d(0, 0, 1, -135deg);
+    border-color: black;
+}
+
+
+/*Closed handle and what happens when hovering over it*/
+
+.menu__handle {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid white;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    padding: 0;
+    outline: none;
+    position: absolute;
+    top: calc(50% - 50px);
+    right: 0.5em;
+    z-index: 2000;
+    transition: background 0.5s linear, border-color 0.8s linear;
+}
+
+@media only screen and (min-device-width: 1224px) {
+    .menu__handle:hover {
+        background: rgba(255, 255, 255, 0.8);
+        transition: background 0.5s linear;
+    }
+    .menu__handle:hover>.arrow {
+        border-color: #e10e0e;
+    }
+}
+
+
+/*Opened handle and what happens when hovering over it*/
+
+.menu--open .menu__handle {
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid black;
+}
+
+@media only screen and (min-device-width: 1224px) {
+    .menu--open .menu__handle:hover {
+        background: rgba(0, 0, 0, 0.9);
+        border: 1px solid transparent;
+    }
+    .menu--open .menu__handle:hover>.arrow {
+        border-color: #e10e0e;
+    }
+}
+
+.morph-shape {
+    position: absolute;
+    width: 240px;
+    height: 100%;
+    top: 0;
+    right: -10%;
+}
+
+.morph-shape svg path {
+    stroke: #ece3e3;
+    stroke-width: 5px;
+}
+
+.menu--open .morph-shape svg path {
+    stroke: #c93535;
+}
+
+@media screen and (max-width: 63em) {
+    .main {
+        padding: 0 2em;
+        -webkit-transition: opacity 0.6s;
+        transition: opacity 0.6s;
+    }
+    .menu {
+        -webkit-transform: translate3d(-170px, 0, 0);
+        transform: translate3d(-170px, 0, 0);
+    }
+    .menu.menu--open+.main {
+        opacity: 0.05;
+    }
+}
