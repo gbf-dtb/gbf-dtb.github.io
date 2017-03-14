@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Arsenal');
-
 body {
     background-color: #333;
-    color:white;
-    font-family:'Arsenal';
+    color: white;
+    font-family: 'Arsenal';
 }
-
 
 a {
     color: #B24E51;
@@ -16,8 +14,14 @@ p {}
 
 .container {
     text-align: center;
-    padding: 5.25em 0.5em 0em 0;
+    padding: 5.25em 0 0 0;
 }
+
+.footer {
+    text-align: center;
+    padding: 0 0 5.25em 0;
+}
+
 
 /*.main{
     padding: 0em 5em 0 5em;
@@ -34,4 +38,14 @@ p {}
     content: " ";
     display: table;
     clear: both;
+}
+
+span.popup {
+    border-bottom:1px dotted white;
+}
+
+span.popup:hover {
+    color:#ff7f7f;
+    border-bottom:1px dotted #ff7f7f;
+    cursor:default;
 }
