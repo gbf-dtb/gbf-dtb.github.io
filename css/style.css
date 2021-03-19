@@ -22,6 +22,12 @@ p {}
     padding: 0 0 5.25em 0;
 }
 
+.side {
+    float: right;
+    background-color: white;
+    margin: 0px 5px 0 5px;
+    width: 300px
+}
 
 /*.main{
     padding: 0em 5em 0 5em;
