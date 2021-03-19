@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Arsenal');
+
+* {
+    display: block !important;
+}
+
 body {
     background-color: #333;
     color: white;
@@ -6,6 +11,7 @@ body {
 }
 
 a {
+    clear: left;
     color: #B24E51;
     text-decoration: none;
 }
